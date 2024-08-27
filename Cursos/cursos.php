@@ -87,7 +87,7 @@ require '../conexion.php'; // Asegúrate de que este archivo esté correctamente
                 }
 
                 // Preparar la consulta SQL para insertar curso
-                $query = "INSERT INTO tbl_Cursos (Nombre, Descripcion, Creditos, Materia, idEstudiante) 
+                $query = "INSERT INTO tbl_cursos (Nombre, Descripcion, Creditos, Materia, idEstudiante) 
                           VALUES (:nombre, :descripcion, :creditos, :materia, :idEstudiante)";
                 $stmt = $conexion->prepare($query);
                 $stmt->bindParam(':nombre', $nombre);
