@@ -76,7 +76,7 @@ require '../conexion.php'; // Asegúrate de que este archivo esté correctamente
             try {
                 // Verificar si el idEstudiante existe en tbl_Estudiantes
                 if ($idEstudiante !== null) {
-                    $stmtCheckEstudiante = $conexion->prepare("SELECT COUNT(*) FROM tbl_Estudiantes WHERE idEstudiante = :idEstudiante");
+                    $stmtCheckEstudiante = $conexion->prepare("SELECT COUNT(*) FROM tbl_estudiantes WHERE idEstudiante = :idEstudiante");
                     $stmtCheckEstudiante->bindParam(':idEstudiante', $idEstudiante, PDO::PARAM_INT);
                     $stmtCheckEstudiante->execute();
                     $estudianteExists = $stmtCheckEstudiante->fetchColumn();
