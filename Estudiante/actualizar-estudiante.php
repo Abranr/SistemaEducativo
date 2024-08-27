@@ -21,11 +21,11 @@ if (isset($_GET['idEstudianteAct'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nombre = filter_var($_POST['nombreInp'], FILTER_SANITIZE_STRING);
-    $apellido = filter_var($_POST['apellidoInp'], FILTER_SANITIZE_STRING);
-    $correo = filter_var($_POST['CorreoInp'], FILTER_VALIDATE_EMAIL);
-    $telefono = filter_var($_POST['telefonoInp'], FILTER_SANITIZE_STRING);
-    $id = filter_var($_POST['idEstudiante'], FILTER_SANITIZE_NUMBER_INT);
+    $nombre = $_POST['nombreInp'];
+    $apellido = $_POST['apellidoInp'];
+    $correo = $_POST['CorreoInp'];
+    $telefono = $_POST['telefonoInp'];
+    $id = $_POST['idEstudiante'];
 
     if ($correo === false) {
         echo "Correo electrónico inválido";
