@@ -1,13 +1,6 @@
 <?php 
 require '../conexion.php'; // Asegúrate de que la ruta sea correcta
 
-// Verificar si la conexión fue exitosa
-try {
-    $conexion = new PDO("mysql:host=$servidor;dbname=$nombreBD", $usuario, $contrasenia);
-    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Error en la conexión: " . $e->getMessage());
-}
 ?>
 <!DOCTYPE html>
 <html lang="es">

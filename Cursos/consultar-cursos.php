@@ -1,17 +1,5 @@
 <?php
-$servidor = "127.0.0.1:3310";
-$nombreBD = "GestionAcademica";
-$usuario = "root";
-$contrasenia = "";
-
-// Verificar si la conexión fue exitosa
-try {
-    $conexion = new PDO("mysql:host=$servidor;dbname=$nombreBD", $usuario, $contrasenia);
-    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Error en la conexión: " . $e->getMessage());
-}
-
+require '../conexion.php';
 // Obtener los cursos
 $consultaSQL = "SELECT c.idCurso, c.Nombre, c.Descripcion, c.Creditos, c.Materia, c.idEstudiante
                 FROM tbl_Cursos AS c

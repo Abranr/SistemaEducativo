@@ -1,13 +1,6 @@
 <?php
 require '../conexion.php';
 
-try {
-    $conexion = new PDO("mysql:host=$servidor;dbname=$nombreBD", $usuario, $contrasenia);
-    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Error en la conexión: " . $e->getMessage());
-}
-
 $stmt = $conexion->query("SELECT * FROM tbl_Profesores");
 $profesores = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>

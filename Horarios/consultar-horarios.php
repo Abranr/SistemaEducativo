@@ -1,14 +1,6 @@
 <?php
 require '../conexion.php'; // Asegúrate de que la ruta sea correcta
 
-// Verificar si la conexión fue exitosa
-try {
-    $conexion = new PDO("mysql:host=$servidor;dbname=$nombreBD", $usuario, $contrasenia);
-    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Error en la conexión: " . $e->getMessage());
-}
-
 // Obtener los horarios junto con los cursos
 $consultaSQL = "SELECT h.idHorario, h.idCurso, h.idProfesor, h.Dia, h.Hora, c.Materia
                 FROM tbl_Horarios h 
