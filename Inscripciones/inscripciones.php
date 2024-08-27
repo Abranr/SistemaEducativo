@@ -33,7 +33,7 @@ require '../conexion.php'; // Asegúrate de que la ruta sea correcta
                 <label for="idCursos" class="block text-gray-700 text-sm font-bold mb-2">Curso:</label>
                 <select id="idCursos" name="idCursos" class="block appearance-none w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500">
                     <?php
-                    $stmt = $conexion->query("SELECT idCursos, Curso FROM tbl_Cursos");
+                    $stmt = $conexion->query("SELECT idCursos, Curso FROM tbl_cursos");
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         echo "<option value='" . htmlspecialchars($row['idCursos'], ENT_QUOTES, 'UTF-8') . "'>" . htmlspecialchars($row['Curso'], ENT_QUOTES, 'UTF-8') . "</option>";
                     }
