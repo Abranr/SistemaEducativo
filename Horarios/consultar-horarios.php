@@ -3,8 +3,8 @@ require '../conexion.php'; // Asegúrate de que la ruta sea correcta
 
 // Obtener los horarios junto con los cursos
 $consultaSQL = "SELECT h.idHorario, h.idCurso, h.idProfesor, h.Dia, h.Hora, c.Materia
-                FROM tbl_Horarios h 
-                JOIN tbl_Cursos c ON h.idCurso = c.idCurso";
+                FROM tbl_horarios h 
+                JOIN tbl_cursos c ON h.idCurso = c.idCurso";
 $sentenciaConsulta = $conexion->prepare($consultaSQL);
 
 try {

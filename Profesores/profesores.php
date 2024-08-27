@@ -73,7 +73,7 @@ require '../conexion.php'; // Asegúrate de que este archivo esté correctamente
                 <select class="form-control" id="idCurso" name="idCurso" required>
                     <?php
                     try {
-                        $stmt = $conexion->query("SELECT idCurso, Nombre FROM tbl_Cursos");
+                        $stmt = $conexion->query("SELECT idCurso, Nombre FROM tbl_cursos");
                         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             echo "<option value='" . htmlspecialchars($row['idCurso'], ENT_QUOTES, 'UTF-8') . "'>" . htmlspecialchars($row['Nombre'], ENT_QUOTES, 'UTF-8') . "</option>";
                         }
@@ -95,7 +95,7 @@ require '../conexion.php'; // Asegúrate de que este archivo esté correctamente
             $especialidad = $_POST['especialidad'];
             $idCurso = $_POST['idCurso'];
 
-            $query = "INSERT INTO tbl_Profesores (Nombre, Apellido, Telefono, Correo, Especialidad, idCurso) 
+            $query = "INSERT INTO tbl_profesores (Nombre, Apellido, Telefono, Correo, Especialidad, idCurso) 
                       VALUES (:nombre, :apellido, :telefono, :correo, :especialidad, :idCurso)";
             $stmt = $conexion->prepare($query);
             $stmt->bindParam(':nombre', $nombre);

@@ -2,7 +2,7 @@
 require '../conexion.php';
 // Obtener los cursos
 $consultaSQL = "SELECT c.idCurso, c.Nombre, c.Descripcion, c.Creditos, c.Materia, c.idEstudiante
-                FROM tbl_Cursos AS c
+                FROM tbl_cursos AS c
                 LEFT JOIN tbl_Horarios AS h ON c.idHorario = h.idHorario"; // Verifica si el JOIN es necesario
 $sentenciaConsulta = $conexion->prepare($consultaSQL);
 

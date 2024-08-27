@@ -3,9 +3,9 @@
 
     // Obtener las notas
     $consultaSQL = "SELECT n.idNotas, e.idEstudiante, e.Nombre, e.Apellido, c.idCurso,c.Materia, n.Nota 
-                    FROM tbl_Notas n
-                    JOIN tbl_Estudiantes e ON n.idEstudiante = e.idEstudiante
-                    JOIN tbl_Cursos c ON n.idCurso = c.idCurso";
+                    FROM tbl_notas n
+                    JOIN tbl_estudiantes e ON n.idEstudiante = e.idEstudiante
+                    JOIN tbl_cursos c ON n.idCurso = c.idCurso";
     $sentenciaConsulta = $conexion->prepare($consultaSQL);
 
     try {

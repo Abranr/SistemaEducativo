@@ -54,7 +54,7 @@ require '../conexion.php'; // Asegúrate de que la ruta sea correcta
             $fecha = $_POST['fecha'];
 
             // Usar una declaración preparada para evitar inyecciones SQL
-            $query = "INSERT INTO tbl_Inscripcion (idEstudiante, idCurso, FechaDeInscripcion) VALUES (:idEstudiante, :idCurso, :fecha)";
+            $query = "INSERT INTO tbl_inscripcion (idEstudiante, idCurso, FechaDeInscripcion) VALUES (:idEstudiante, :idCurso, :fecha)";
             $stmt = $conexion->prepare($query);
             $stmt->bindParam(':idEstudiante', $idEstudiante, PDO::PARAM_INT);
             $stmt->bindParam(':idCurso', $idCurso, PDO::PARAM_INT);
