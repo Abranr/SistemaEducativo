@@ -1,7 +1,7 @@
 <?php
 require '../conexion.php';
 
-$stmt = $conexion->query("SELECT * FROM tbl_Profesores");
+$stmt = $conexion->query("SELECT * FROM tbl_profesores");
 $profesores = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
