@@ -21,7 +21,7 @@
             exit;
         }
 
-        $insertarSQL = "INSERT INTO tbl_Estudiantes (Nombre, Apellido, Correo, Telefono) 
+        $insertarSQL = "INSERT INTO tbl_estudiantes (Nombre, Apellido, Correo, Telefono) 
                         VALUES (:nombre, :apellido, :email, :telefono)";
         
         $sentencia = $conexion->prepare($insertarSQL);

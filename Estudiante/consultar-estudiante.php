@@ -1,7 +1,7 @@
 <?php
 require '../conexion.php';
 
-$consultaSQL = "SELECT * FROM tbl_Estudiantes";
+$consultaSQL = "SELECT * FROM tbl_estudiantes";
 $sentenciaConsulta = $conexion->prepare($consultaSQL);
 
 try {

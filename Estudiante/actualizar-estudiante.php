@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     }
 
-    $actualizarSQL = "UPDATE tbl_Estudiantes 
+    $actualizarSQL = "UPDATE tbl_estudiantes 
                       SET Nombre = :nombre, Apellido = :apellido, Correo = :correo, Telefono = :telefono 
                       WHERE idEstudiante = :id";
     

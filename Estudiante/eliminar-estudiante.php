@@ -4,7 +4,7 @@ require '../conexion.php';
 if (isset($_GET['IdEstudianteEli'])) {
     $id = $_GET['IdEstudianteEli'];
 
-    $consultaSQL = "DELETE FROM tbl_Estudiantes WHERE idEstudiante = :id";
+    $consultaSQL = "DELETE FROM tbl_estudiantes WHERE idEstudiante = :id";
     $sentencia = $conexion->prepare($consultaSQL);
     $sentencia->bindParam(':id', $id, PDO::PARAM_INT); // Especifica el tipo de parámetro como entero
 
