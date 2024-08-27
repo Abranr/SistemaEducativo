@@ -22,7 +22,7 @@ require '../conexion.php'; // Asegúrate de que la ruta sea correcta
                 <label for="idEstudiante" class="block text-gray-700 text-sm font-bold mb-2">Estudiante:</label>
                 <select id="idEstudiante" name="idEstudiante" class="block appearance-none w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500">
                     <?php
-                    $stmt = $conexion->query("SELECT idEstudiante, Nombre, Apellido FROM tbl_Estudiantes");
+                    $stmt = $conexion->query("SELECT idEstudiante, Nombre, Apellido FROM tbl_estudiantes");
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         echo "<option value='" . htmlspecialchars($row['idEstudiante'], ENT_QUOTES, 'UTF-8') . "'>" . htmlspecialchars($row['Nombre'] . " " . $row['Apellido'], ENT_QUOTES, 'UTF-8') . "</option>";
                     }

@@ -4,7 +4,7 @@ require '../conexion.php';
 if (isset($_GET['idEstudianteAct'])) {
     $id = filter_var($_GET['idEstudianteAct'], FILTER_SANITIZE_NUMBER_INT);
     
-    $consultaSQL = "SELECT * FROM tbl_Estudiantes WHERE idEstudiante = :id";
+    $consultaSQL = "SELECT * FROM tbl_estudiantes WHERE idEstudiante = :id";
     $sentencia = $conexion->prepare($consultaSQL);
     $sentencia->bindParam(':id', $id, PDO::PARAM_INT);
     $sentencia->execute();
