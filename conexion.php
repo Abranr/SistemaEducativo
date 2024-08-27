@@ -1,12 +1,13 @@
 <?php
-$servidor = "127.0.0.1:3310";
-$nombreBD = "GestionAcademica";
+$servidor = "mysql.railway.internal";
+$PORT = "3306";
+$nombreBD = "railway";
 $usuario = "root";
-$contrasenia = "";
+$contrasenia = "OMbXztenmYuxuqWwmyImhgAxgjuMfDsG";
 
 try {
     //crear la conexion con PDO
-    $conexion = new PDO("mysql:host=$servidor; dbname=$nombreBD", $usuario, $contrasenia);
+    $conexion = new PDO("mysql:host=$servidor;port=$PORT; dbname=$nombreBD", $usuario, $contrasenia);
     //configurar la conexión PDO para que muestre los errores
     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //mensaje de conexión exitosa
