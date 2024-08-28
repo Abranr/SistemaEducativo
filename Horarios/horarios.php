@@ -8,7 +8,7 @@ if (isset($_POST['guardar'])) {
     $dia = $_POST['dia'];
     $hora = $_POST['hora'];
 
-    $query = "INSERT INTO tbl_Horarios (idCurso, idProfesor, Dia, Hora) VALUES (:curso, :profesor, :dia, :hora)";
+    $query = "INSERT INTO tbl_horarios (idCurso, idProfesor, Dia, Hora) VALUES (:curso, :profesor, :dia, :hora)";
     $stmt = $conexion->prepare($query);
     $stmt->bindParam(':curso', $curso);
     $stmt->bindParam(':profesor', $profesor);
