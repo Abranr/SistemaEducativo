@@ -25,8 +25,8 @@ if (isset($_POST['guardar'])) {
 // Manejo del formulario para consultar horarios
 if (isset($_POST['consultar'])) {
     $query = "SELECT h.Dia, h.Hora, c.Nombre AS Curso 
-              FROM tbl_Horarios h
-              JOIN tbl_Cursos c ON h.idCurso = c.idCurso
+              FROM tbl_horarios h
+              JOIN tbl_cursos c ON h.idCurso = c.idCurso
               ORDER BY h.Dia ASC, h.Hora ASC";
     $stmt = $conexion->prepare($query);
     $stmt->execute();
@@ -52,7 +52,7 @@ if (isset($_POST['consultar'])) {
                 <label for="curso" class="block text-sm font-medium text-gray-700">Curso:</label>
                 <select id="curso" name="curso" required class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                     <?php
-                    $cursosQuery = "SELECT idCurso, Nombre FROM tbl_Cursos";
+                    $cursosQuery = "SELECT idCurso, Nombre FROM tbl_cursos";
                     $stmtCursos = $conexion->prepare($cursosQuery);
                     $stmtCursos->execute();
                     $cursos = $stmtCursos->fetchAll(PDO::FETCH_ASSOC);
@@ -69,7 +69,7 @@ if (isset($_POST['consultar'])) {
                 <label for="profesor" class="block text-sm font-medium text-gray-700">Profesor:</label>
                 <select id="profesor" name="profesor" required class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                     <?php
-                    $profesoresQuery = "SELECT idProfesor, Nombre FROM tbl_Profesores";
+                    $profesoresQuery = "SELECT idProfesor, Nombre FROM tbl_profesores";
                     $stmtProfesores = $conexion->prepare($profesoresQuery);
                     $stmtProfesores->execute();
                     $profesores = $stmtProfesores->fetchAll(PDO::FETCH_ASSOC);

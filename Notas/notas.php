@@ -19,7 +19,7 @@
         } else {
             try {
                 // Preparar la consulta SQL
-                $query = "INSERT INTO tbl_Notas (idEstudiante, idCurso, idProfesor, Nota) VALUES (:idEstudiante, :idCurso, :idProfesor, :nota)";
+                $query = "INSERT INTO tbl_notas (idEstudiante, idCurso, idProfesor, Nota) VALUES (:idEstudiante, :idCurso, :idProfesor, :nota)";
                 $stmt = $conexion->prepare($query);
                 $stmt->bindParam(':idEstudiante', $idEstudiante, PDO::PARAM_INT);
                 $stmt->bindParam(':idCurso', $idCurso, PDO::PARAM_INT);
